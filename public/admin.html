@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý dữ liệu giọng nói</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📊 Quản lý dữ liệu giọng nói</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nội dung</th>
+        <th>Nghe</th>
+      </tr>
+    </thead>
+    <tbody id="list"></tbody>
+  </table>
+
+  <br>
+  <button onclick="location.href='index.html'">⬅️ Quay lại</button>
+</div>
+
+<script>
+fetch("/list")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+
+    data.forEach((item, i) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td>${item.text}</td>
+        <td>
+          <audio controls src="${item.audio_url}"></audio>
+        </td>
+      `;
+      list.appendChild(tr);
+    });
+  });
+</script>
+
+</body>
+</html>

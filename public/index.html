@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thu Âm Giọng Nói Cho AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎙️ Thu Âm Giọng Nói Cho AI</h1>
+  <p>Nhập câu bên dưới, bấm thu âm và gửi dữ liệu</p>
+
+  <textarea id="text" placeholder="Nhập câu bạn sẽ đọc..."></textarea>
+
+  <div class="buttons">
+    <button id="record">🎤 Thu âm</button>
+    <button id="stop" disabled>⏹️ Dừng</button>
+    <button id="send" disabled>📤 Gửi</button>
+  </div>
+
+  <audio id="preview" controls></audio>
+
+  <hr>
+  <button onclick="location.href='admin.html'">📊 Trang quản lý</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

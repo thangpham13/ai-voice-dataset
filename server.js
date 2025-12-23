@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 /* 🔑 SUPABASE CONFIG */
 const SUPABASE_URL = "https://wufwszthrmgwgmhvwjom.supabase.co";
-const SUPABASE_KEY = "YOUR_SERVICE_ROLE_KEY"; // ❗ nên đưa vào ENV
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1ZndzenRocm1nd2dtaHZ3am9tIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NjEzMzczOCwiZXhwIjoyMDgxNzA5NzM4fQ.jqdllNaWC9kpoVUKpi16YX5q7SMMk0yOYi8D53_wPwI"; // ❗ nên đưa vào ENV
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 app.use(cors());

@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Thu Âm Giọng Nói Cho AI</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Voice Dataset Tool</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
-  <h1>🎙️ Thu Âm Giọng Nói Cho AI</h1>
-  <p>Nhập câu bên dưới, bấm thu âm và gửi dữ liệu</p>
+<div class="app">
 
-  <textarea id="text" placeholder="Nhập câu bạn sẽ đọc..."></textarea>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>🎙️ Thu Dataset</h2>
 
-  <div class="buttons">
-    <button id="record">🎤 Thu âm</button>
-    <button id="stop" disabled>⏹️ Dừng</button>
-    <button id="send" disabled>📤 Gửi</button>
-  </div>
+    <div class="block">
+      <label>📄 Upload file TXT</label>
+      <input type="file" id="txtFile" accept=".txt">
+    </div>
 
-  <audio id="preview" controls></audio>
+    <div class="block">
+      <label>🎚️ Lọc âm thanh</label>
+      <label><input type="checkbox" id="noiseSuppression" checked> Lọc tạp âm</label>
+      <label><input type="checkbox" id="echoCancellation" checked> Khử vọng</label>
+      <label><input type="checkbox" id="autoGain" checked> Auto gain</label>
+    </div>
 
-  <hr>
-  <button onclick="location.href='admin.html'">📊 Trang quản lý</button>
+    <div class="block">
+      <label>🚫 Kiểm tra âm</label>
+      <label><input type="checkbox" id="detectSilence" checked> Chặn audio im lặng</label>
+      <div id="silenceStatus" class="status">Chưa thu</div>
+    </div>
+
+    <div class="block help">
+      <p><b>Phím tắt</b></p>
+      <p>Space: Thu / Dừng</p>
+      <p>Enter: Gửi</p>
+      <p>R: Thu lại</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+    <h1>Câu cần đọc</h1>
+
+    <div id="sentence" class="sentence">
+      Upload TXT để bắt đầu
+    </div>
+
+    <audio id="preview" controls></audio>
+
+    <div class="buttons">
+      <button id="record">🎤 BẮT ĐẦU</button>
+      <button id="stop" disabled>⏹ DỪNG</button>
+      <button id="send" disabled>📤 GỬI</button>
+    </div>
+  </main>
+
 </div>
 
 <script src="script.js"></script>

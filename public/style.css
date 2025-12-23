@@ -1,93 +1,111 @@
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #0f0f0f;
+  color: #fff;
 }
 
-.container {
-  background: #fff;
-  width: 420px;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+.app {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #151515;
+  padding: 24px;
+  border-right: 1px solid #222;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.block {
+  margin-bottom: 22px;
+}
+
+.block label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.sidebar input[type="file"] {
+  width: 100%;
+}
+
+.sidebar input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.status {
+  margin-top: 8px;
+  padding: 8px;
+  background: #1e1e1e;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.help p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* CONTENT */
+.content {
+  padding: 40px;
   text-align: center;
 }
 
-h1 {
-  margin: 0;
-  color: #333;
-}
-
-.desc {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-textarea {
-  width: 100%;
-  height: 80px;
-  padding: 10px;
-  resize: none;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-
-.buttons {
-  margin: 15px 0;
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-  color: #fff;
-}
-
-#recordBtn { background: #e74c3c; }
-#stopBtn { background: #f39c12; }
-#uploadBtn { background: #2ecc71; }
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.sentence {
+  margin: 30px auto;
+  padding: 25px;
+  width: 80%;
+  background: #1e1e1e;
+  border-radius: 12px;
+  border: 1px solid #333;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 audio {
-  width: 100%;
-  margin-top: 10px;
+  width: 80%;
+  margin: 20px 0;
 }
 
-#status {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #2c3e50;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
-.admin-btn {
-  margin-top: 15px;
-  width: 100%;
-  padding: 10px;
-  background: #34495e;
-  color: #fff;
+
+button {
+  padding: 14px 22px;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.admin-btn:hover {
-  background: #2c3e50;
+#record {
+  background: #e53935;
+  color: #fff;
+}
+
+#stop {
+  background: #555;
+  color: #fff;
+}
+
+#send {
+  background: #4caf50;
+  color: #fff;
 }
